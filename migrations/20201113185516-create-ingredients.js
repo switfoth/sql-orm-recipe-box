@@ -14,7 +14,8 @@ module.exports = {
       },
       measurementUnitId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{model:"MeasurementUnits"}
       },
       foodStuff: {
         allowNull: false,
@@ -22,7 +23,8 @@ module.exports = {
       },
       recipeId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{model:"Recipes"}
       },
       createdAt: {
         allowNull: false,
