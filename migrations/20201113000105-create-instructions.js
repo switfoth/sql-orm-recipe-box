@@ -14,8 +14,9 @@ module.exports = {
       listOrder: {
         type: Sequelize.INTEGER
       },
-      recipeID: {
-        type: Sequelize.INTEGER
+      recipeId: {
+        type: Sequelize.INTEGER,
+        references:{model:"Recipes"}
       },
       createdAt: {
         allowNull: false,
