@@ -3,7 +3,12 @@ module.exports = (sequelize, DataTypes) => {
   const Ingredients = sequelize.define('Ingredients', {
     amount: DataTypes.NUMERIC,
     measurementUnitId: DataTypes.INTEGER,
-    foodStuff: DataTypes.STRING,
+    foodStuff: {
+      type:DataTypes.STRING,
+      validate:{
+        notEmpty:true,
+      },
+    },
     recipeId: DataTypes.INTEGER
   }, {});
   Ingredients.associate = function(models) {
