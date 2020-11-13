@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     recipeId: DataTypes.INTEGER
   }, {});
   Ingredients.associate = function(models) {
-  Ingredients.belongsTo(models.Recipe, {foreignKey: 'recipeId'});
+  Ingredients.belongsTo(models.Recipes, {foreignKey: 'recipeId'});
   Ingredients.belongsTo(models.MeasurementUnit, {foreignKey: 'measurementUnitId'});
   };
   return Ingredients;

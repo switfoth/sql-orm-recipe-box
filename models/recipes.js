@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     },
   },);
   Recipes.associate = function(models) {
-  Recipes.hasMany(models.Ingredients, {foreignKey: "recipeId"})
-  Recipes.hasMany(models.Instructions, {foreignKey:"recipeID"})
+  Recipes.hasMany(models.Ingredients, {foreignKey: "recipeId", onDelete:'CASCADE', hooks:true})
+  Recipes.hasMany(models.Instructions, {foreignKey:"recipeID", onDelete:'CASCADE', hooks:true})
   };
   return Recipes;
 };
